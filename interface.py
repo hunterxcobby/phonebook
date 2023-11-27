@@ -2,7 +2,7 @@
 
 import curses
 import subprocess
-from menu import print_menu, print_author_info, print_contacts_model
+from menu import print_menu, print_author_info, version_model
 
 
 def main(stdscr):
@@ -28,7 +28,7 @@ def main(stdscr):
     # Print menu, author info, and contacts model
     print_menu(stdscr)
     print_author_info(stdscr)
-    print_contacts_model(stdscr)
+    version_model(stdscr)
 
     while True:
         # Get user input

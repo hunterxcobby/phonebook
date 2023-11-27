@@ -24,13 +24,16 @@ def print_menu(stdscr):
     stdscr.refresh()
 
 def print_author_info(stdscr):
-    # Print author information
+    # Print author information at the left bottom
     author_info = "Author: Your Name"
-    stdscr.addstr(10, 2, author_info)
+    height, width = stdscr.getmaxyx()
+    author_row = height - 1
+    author_col = 0
+    stdscr.addstr(author_row, author_col, author_info)
     stdscr.refresh()
 
-def print_contacts_model(stdscr):
+def version_model(stdscr):
     # Print contacts model information
-    contacts_model = "Contacts Model: Your Model"
+    contacts_model = "cli phonebook v1.0"
     stdscr.addstr(11, 2, contacts_model)
     stdscr.refresh()
