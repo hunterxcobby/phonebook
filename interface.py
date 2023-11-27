@@ -2,11 +2,15 @@
 
 import curses
 import subprocess
+from menu import print_menu, print_author_info, print_contacts_model
 
 def main(stdscr):
     # Set up the screen
     curses.curs_set(0)
     stdscr.clear()
+
+    #Call the function with the animated start page
+    print_menu(stdscr)
 
     # Get screen size
     height, width = stdscr.getmaxyx()
@@ -17,13 +21,13 @@ def main(stdscr):
     # Enable keypad input
     stdscr.keypad(1)
 
-    # Print a simple menu
-    menu = ["Press s to start the phonebook", "Press q to quit"]
-    for idx, item in enumerate(menu, start=1):
-        stdscr.addstr(idx, 2, item)
-
     # Refresh the screen
     stdscr.refresh()
+
+    # Print menu, author info, and contacts model
+    print_menu(stdscr)
+    print_author_info(stdscr)
+    print_contacts_model(stdscr)
 
     while True:
         # Get user input
@@ -41,14 +45,13 @@ def main(stdscr):
     curses.endwin()
 
 def run_c_program_in_tmux():
-    # Replace 'your_program' with the actual name of your compiled C program
     program_path = './phonebook'
     
     try:
         # Launch a new tmux window and run the C program
         subprocess.run([program_path], check=True)
     except subprocess.CalledProcessError:
-        print("Error launching tmux for .format{program_path}")
+        print(f"Error launching tmux for {program_path}")
 
 if __name__ == "__main__":
     curses.wrapper(main)
