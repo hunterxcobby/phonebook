@@ -8,9 +8,9 @@ def print_menu(stdscr):
     height, width = stdscr.getmaxyx()
     # Print a simple menu
     menu = [
-        "Phonebook Interface",
-
-        "Press s to start ",
+        "🅲 🅼 🅳  🅻 🅸 🅽 🅴  🅿 🅷 🅾 🅽 🅴 🅱 🅾 🅾 🅺",
+        "---------------------------------",
+        "Press ENTER to start ",
         "Press q to quit",
     ]
     
