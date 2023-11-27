@@ -1,7 +1,7 @@
 # this is for the menu of the phonebook
 # Import necessary modules
 import curses
-import time
+import animation
 
 
 def print_menu(stdscr):
