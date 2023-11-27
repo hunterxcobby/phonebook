@@ -4,15 +4,12 @@ import curses
 import subprocess
 import time
 from menu import print_menu, print_mail_info, version_model
-
+from utility import print_loading, loading_animation
 
 def main(stdscr):
     # Set up the screen
     curses.curs_set(0)
-    stdscr.clear()
-
-    #Call the function with the animated start page
-    print_menu(stdscr)
+    stdscr.clear()    
 
     # Get screen size
     height, width = stdscr.getmaxyx()
@@ -30,8 +27,6 @@ def main(stdscr):
     print_menu(stdscr)
     print_mail_info(stdscr)
 
-
-
     version_model(stdscr)
 
     while True:
@@ -40,8 +35,11 @@ def main(stdscr):
 
         # Process user input
         if key == curses.KEY_ENTER or key == 10:
+            print_loading(stdscr)
+            time.sleep(2)
 
-            time.sleep(3)
+            loading_animation(stdscr)
+            time.sleep(2)
             # Run a C program in a new tmux window
             run_c_program_in_tmux()
         elif key == ord('q'):
