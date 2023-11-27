@@ -2,6 +2,7 @@
 
 import curses
 import subprocess
+import time
 from menu import print_menu, print_mail_info, version_model
 
 
@@ -39,6 +40,8 @@ def main(stdscr):
 
         # Process user input
         if key == curses.KEY_ENTER or key == 10:
+
+            time.sleep(3)
             # Run a C program in a new tmux window
             run_c_program_in_tmux()
         elif key == ord('q'):
