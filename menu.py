@@ -16,24 +16,30 @@ def print_menu(stdscr):
     
 
     # Calculate the starting row for the menu to center it vertically
-    start_row = height // 2 + 2
+    start_row = height // 2 + 4
 
     for idx, item in enumerate(menu, start=start_row):
         stdscr.addstr(idx, (width - len(item)) // 2, item)
 
     stdscr.refresh()
 
-def print_author_info(stdscr):
-    # Print author information at the left bottom
-    author_info = "Author: Your Name"
+def print_mail_info(stdscr):
+    mail_info = "Mail: solomonsefah13@gmail.com"
+
     height, width = stdscr.getmaxyx()
-    author_row = height - 1
-    author_col = 0
-    stdscr.addstr(author_row, author_col, author_info)
+    mail_row = height - 1
+    mail_col = 0
+
+    stdscr.addstr(mail_row, mail_col, mail_info.encode('utf-8').decode('utf-8', 'half'))
     stdscr.refresh()
 
+
 def version_model(stdscr):
-    # Print contacts model information
+    # Print contacts model information at the top right corner
     contacts_model = "cli phonebook v1.0"
-    stdscr.addstr(11, 2, contacts_model)
+    height, width = stdscr.getmaxyx()
+    model_row = 0
+    model_col = 0  # Adjust the '2' for spacing
+    stdscr.addstr(model_row, model_col, contacts_model)
     stdscr.refresh()
+
