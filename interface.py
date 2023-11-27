@@ -4,6 +4,7 @@ import curses
 import subprocess
 from menu import print_menu, print_author_info, print_contacts_model
 
+
 def main(stdscr):
     # Set up the screen
     curses.curs_set(0)

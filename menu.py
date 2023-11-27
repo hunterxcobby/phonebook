@@ -1,6 +1,11 @@
 # this is for the menu of the phonebook
+# Import necessary modules
+import curses
+
 
 def print_menu(stdscr):
+
+    height, width = stdscr.getmaxyx()
     # Print a simple menu
     menu = [
         "Phonebook Interface",
@@ -9,8 +14,12 @@ def print_menu(stdscr):
         "Press q to quit",
     ]
     
-    for idx, item in enumerate(menu, start=1):
-        stdscr.addstr(idx, 2, item)
+
+    # Calculate the starting row for the menu to center it vertically
+    start_row = height // 2 + 2
+
+    for idx, item in enumerate(menu, start=start_row):
+        stdscr.addstr(idx, (width - len(item)) // 2, item)
 
     stdscr.refresh()
 
