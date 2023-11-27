@@ -38,7 +38,7 @@ def main(stdscr):
         key = stdscr.getch()
 
         # Process user input
-        if key == ord('s'):
+        if key == curses.KEY_ENTER or key == 10:
             # Run a C program in a new tmux window
             run_c_program_in_tmux()
         elif key == ord('q'):
