@@ -7,10 +7,17 @@ run_interface()
     python3 "interface.py"
 }
 
-compile_c()
+#!/usr/bin/env bash
+
+compile_c() 
 {
-    #compile the c program
-    gcc *.c -o phonebook
+    # Compile the C program
+    if gcc *.c -o phonebook; then
+        echo "Compilation successful"
+    else
+        echo "Compilation failed"
+        exit 1
+    fi
 }
 
 # Call the function
