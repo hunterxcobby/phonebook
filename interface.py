@@ -48,7 +48,7 @@ def run_c_program_in_tmux():
         # Launch a new tmux window and run the C program
         subprocess.run([program_path], check=True)
     except subprocess.CalledProcessError:
-        print(f"Error launching tmux for {program_path}")
+        print("Error launching tmux for .format{program_path}")
 
 if __name__ == "__main__":
     curses.wrapper(main)
