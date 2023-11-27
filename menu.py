@@ -1,8 +1,4 @@
 # this is for the menu of the phonebook
-# Import necessary modules
-import curses
-import animation
-
 
 def print_menu(stdscr):
     # Print a simple menu
