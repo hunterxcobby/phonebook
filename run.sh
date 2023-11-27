@@ -13,7 +13,7 @@ compile_c()
 {
     # Compile the C program
     if gcc *.c -o phonebook; then
-        echo "Compilation successful"
+        echo "Successfully closed PhoneBook"
     else
         echo "Compilation failed"
         exit 1
