@@ -11,6 +11,11 @@ def main(stdscr):
     curses.curs_set(0)
     stdscr.clear()    
 
+    # Set the background color to cyan
+    curses.start_color()
+    curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_MAGENTA)
+    stdscr.bkgd(curses.color_pair(1))
+
     # Get screen size
     height, width = stdscr.getmaxyx()
 
