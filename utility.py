@@ -5,9 +5,9 @@ import time
 def print_loading(stdscr):
     height, width = stdscr.getmaxyx()
     loading_row = height // 2
-    loading_col = (width - len(" LOADING")) // 2
+    loading_col = (width - len(" ░L░O░A░D░I░N░G░")) // 2
 
-    stdscr.addstr(loading_row, loading_col, " LOADING")
+    stdscr.addstr(loading_row, loading_col, " ░L░O░A░D░I░N░G░")
     stdscr.refresh()
 
 def loading_animation(stdscr):
@@ -32,9 +32,9 @@ def loading_animation(stdscr):
 def print_quiting(stdscr):
     height, width = stdscr.getmaxyx()
     quiting_row = height // 2
-    quiting_col = (width - len(" QUITTING")) // 2
+    quiting_col = (width - len(" ░Q░U░I░T░T░I░N░G░")) // 2
 
-    stdscr.addstr(quiting_row, quiting_col, " QUITTING")
+    stdscr.addstr(quiting_row, quiting_col, " ░Q░U░I░T░T░I░N░G░")
     stdscr.refresh()
 
 def quit_loading(stdscr):
