@@ -40,8 +40,8 @@ def main(stdscr):
 
         # Process user input
         if key == curses.KEY_ENTER or key == 10:
-            print_loading(stdscr)
             time.sleep(2)
+            print_loading(stdscr)
 
             loading_animation(stdscr)
             time.sleep(2)
