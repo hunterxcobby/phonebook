@@ -18,7 +18,7 @@ def loading_animation(stdscr):
     animation_frames = "|/-\\"
 
     # Display "Loading..." with animation for 3 seconds
-    for _ in range(3):
+    for _ in range(7):
         for frame in animation_frames:
             stdscr.clear()
             print_loading(stdscr)
@@ -29,10 +29,3 @@ def loading_animation(stdscr):
     # Clear the screen
     stdscr.clear()
     stdscr.refresh()
-
-    # Display "Please wait" message
-    please_wait_row = loading_row + 1
-    please_wait_col = loading_col
-    stdscr.addstr(please_wait_row, please_wait_col, "Please wait")
-    stdscr.refresh()
-    time.sleep(2)  # Adjust the delay as needed
