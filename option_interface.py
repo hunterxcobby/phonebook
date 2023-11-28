@@ -1,6 +1,7 @@
 # phonebook_interface.py
 
 import curses
+from utility import quit_loading
 
 def print_phonebook_menu(stdscr, selected_option):
     # Print the phone book menu with the selected option highlighted
@@ -69,7 +70,9 @@ def phonebook_interface(stdscr):
                 pass
             elif selected_option == 5:
                 # Go back
+                quit_loading(stdscr)
                 break
+
 
     # Clean up
     curses.endwin()
