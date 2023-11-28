@@ -6,12 +6,11 @@ from utility import quit_loading
 def print_phonebook_menu(stdscr, selected_option):
     # Print the phone book menu with the selected option highlighted
     menu = [
-        "Phonebook Options",
         "Add Contact",
         "Save Contacts",
         "Edit Contact",
         "Delete Contact",
-        "Press q to go back"
+        "Exit"
     ]
 
     for idx, item in enumerate(menu, start=1):
