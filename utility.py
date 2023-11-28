@@ -22,7 +22,7 @@ def loading_animation(stdscr):
         for frame in animation_frames:
             stdscr.clear()
             print_loading(stdscr)
-            stdscr.addstr(loading_row + 1, loading_col, f"Please wait {frame}")
+            stdscr.addstr(loading_row + 1, loading_col, f"{frame}")
             stdscr.refresh()
             time.sleep(0.1)
 

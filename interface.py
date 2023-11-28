@@ -44,7 +44,7 @@ def main(stdscr):
             print_loading(stdscr)
 
             loading_animation(stdscr)
-            time.sleep(1)
+            time.sleep(0.5)
             # Run a C program in a new tmux window
             run_c_program_in_tmux()
         elif key == ord('q'):
