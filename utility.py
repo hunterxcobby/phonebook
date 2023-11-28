@@ -6,25 +6,25 @@ import time
 def print_loading(stdscr):
     height, width = stdscr.getmaxyx()
     loading_row = height // 2
-    loading_col = (width - len("Loading...")) // 2
+    loading_col = (width - len(" LOADING")) // 2
 
-    stdscr.addstr(loading_row, loading_col, "Loading...")
+    stdscr.addstr(loading_row, loading_col, " LOADING")
     stdscr.refresh()
 
 def loading_animation(stdscr):
     height, width = stdscr.getmaxyx()
     loading_row, loading_col = height // 2, width // 2  # Unpack the tuple
 
-    animation_frames = "|/-\\"
+    # Display "Loading..." with an interactive frame animation for 3 seconds
+    frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]  # Use Unicode characters for a dynamic effect
 
-    # Display "Loading..." with animation for 3 seconds
-    for _ in range(7):
-        for frame in animation_frames:
+    for _ in range(3):
+        for frame in frames:
             stdscr.clear()
             print_loading(stdscr)
             stdscr.addstr(loading_row + 1, loading_col, f"{frame}")
             stdscr.refresh()
-            time.sleep(0.1)
+            time.sleep(0.15)
 
     # Clear the screen
     stdscr.clear()
