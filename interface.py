@@ -4,7 +4,8 @@ import curses
 import subprocess
 import time
 from menu import print_menu, print_mail_info, version_model
-from utility import print_loading, loading_animation
+from utility import print_loading, loading_animation, quit_loading
+from option_interface import phonebook_interface
 
 def main(stdscr):
     # Set up the screen
@@ -45,15 +46,16 @@ def main(stdscr):
 
             loading_animation(stdscr)
             # Run a C program in a new tmux window
-            run_c_program_in_tmux()
+            phonebook_interface(stdscr)
         elif key == ord('q'):
+            quit_loading(stdscr)
             # Quit the program
             break
 
     # Clean up
     curses.endwin()
 
-def run_c_program_in_tmux():
+"""def run_c_program_in_tmux():
     program_path = './phonebook'
     
     try:
@@ -61,7 +63,7 @@ def run_c_program_in_tmux():
         subprocess.run([program_path], check=True)
     except subprocess.CalledProcessError:
         print(f"Error starting program {program_path}")
-        print("Please restart...")
+        print("Please restart...")"""
 
 if __name__ == "__main__":
     curses.wrapper(main)
