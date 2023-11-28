@@ -40,7 +40,7 @@ def main(stdscr):
 
         # Process user input
         if key == curses.KEY_ENTER or key == 10:
-            time.sleep(2)
+            time.sleep(0.5)
             print_loading(stdscr)
 
             loading_animation(stdscr)
@@ -61,7 +61,8 @@ def run_c_program_in_tmux():
         # Launch a new tmux window and run the C program
         subprocess.run([program_path], check=True)
     except subprocess.CalledProcessError:
-        print(f"Error launching tmux for {program_path}")
+        print(f"Error starting program {program_path}")
+        print("Please restart...")
 
 if __name__ == "__main__":
     curses.wrapper(main)
