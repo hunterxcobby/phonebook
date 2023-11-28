@@ -2,19 +2,22 @@
 
 import curses
 
-def print_phonebook_menu(stdscr):
-    # Print the phone book menu
+def print_phonebook_menu(stdscr, selected_option):
+    # Print the phone book menu with the selected option highlighted
     menu = [
         "Phonebook Options",
-        "1. Add Contact",
-        "2. Save Contacts",
-        "3. Edit Contact",
-        "4. Delete Contact",
+        "Add Contact",
+        "Save Contacts",
+        "Edit Contact",
+        "Delete Contact",
         "Press q to go back"
     ]
 
     for idx, item in enumerate(menu, start=1):
-        stdscr.addstr(idx, 2, item)
+        if idx == selected_option:
+            stdscr.addstr(idx, 2, item, curses.A_STANDOUT)
+        else:
+            stdscr.addstr(idx, 2, item)
 
     stdscr.refresh()
 
@@ -35,31 +38,40 @@ def phonebook_interface(stdscr):
     # Refresh the screen
     stdscr.refresh()
 
+    # Initialize selected option
+    selected_option = 1
+
     while True:
-        # Display phone book menu
-        print_phonebook_menu(stdscr)
+        # Display phone book menu with the selected option highlighted
+        print_phonebook_menu(stdscr, selected_option)
 
         # Get user input
         key = stdscr.getch()
 
         # Process user input
-        if key == ord('1'):
-            # Add contact logic (you can implement this)
-            pass
-        elif key == ord('2'):
-            # Save contacts logic (you can implement this)
-            pass
-        elif key == ord('3'):
-            # Edit contact logic (you can implement this)
-            pass
-        elif key == ord('4'):
-            # Delete contact logic (you can implement this)
-            pass
-        elif key == ord('q'):
-            # Go back
-            break
+        if key == curses.KEY_DOWN and selected_option < 5:
+            selected_option += 1
+        elif key == curses.KEY_UP and selected_option > 1:
+            selected_option -= 1
+        elif key == curses.KEY_ENTER or key == 10:
+            # Perform action based on the selected option
+            if selected_option == 1:
+                # Add contact logic (you can implement this)
+                pass
+            elif selected_option == 2:
+                # Save contacts logic (you can implement this)
+                pass
+            elif selected_option == 3:
+                # Edit contact logic (you can implement this)
+                pass
+            elif selected_option == 4:
+                # Delete contact logic (you can implement this)
+                pass
+            elif selected_option == 5:
+                # Go back
+                break
 
     # Clean up
     curses.endwin()
 
-# You can add more functions for each specific action (add, save, edit, delete) in this module
+# ... (rest of the phonebook_interface module)
