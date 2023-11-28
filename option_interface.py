@@ -56,16 +56,16 @@ def phonebook_interface(stdscr):
         elif key == curses.KEY_ENTER or key == 10:
             # Perform action based on the selected option
             if selected_option == 1:
-                # Add contact logic (you can implement this)
+                # Add contact logic 
                 pass
             elif selected_option == 2:
-                # Save contacts logic (you can implement this)
+                # Save contacts logic
                 pass
             elif selected_option == 3:
-                # Edit contact logic (you can implement this)
+                # Edit contact logic will be placed here 
                 pass
             elif selected_option == 4:
-                # Delete contact logic (you can implement this)
+                # Delete contact logic will go here 
                 pass
             elif selected_option == 5:
                 # Go back
@@ -76,4 +76,3 @@ def phonebook_interface(stdscr):
     # Clean up
     curses.endwin()
 
-# ... (rest of the phonebook_interface module)
