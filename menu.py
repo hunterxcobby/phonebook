@@ -40,7 +40,7 @@ def version_model(stdscr):
     contacts_model = "cli phonebook v1.0"
     height, width = stdscr.getmaxyx()
     model_row = 0
-    model_col = 0  # Adjust the '2' for spacing
+    model_col = 0  
     stdscr.addstr(model_row, model_col, contacts_model)
     stdscr.refresh()
 
