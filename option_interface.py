@@ -20,10 +20,10 @@ def print_phonebook_menu(stdscr, selected_option):
             stdscr.addstr(idx, 2, item)
 
     # Print "Help" at the left bottom
-    stdscr.addstr(curses.LINES - 1, 2, "Help (Ctrl + H)", curses.A_BOLD)
+    stdscr.addstr(curses.LINES - 1, 2, "HELP (Ctrl + H)", curses.A_BOLD)
 
     # Print "Exit" at the right bottom
-    stdscr.addstr(curses.LINES - 1, curses.COLS - 20, "Exit (Ctrl + Q)", curses.A_BOLD)
+    stdscr.addstr(curses.LINES - 1, curses.COLS - 20, "EXIT (q)", curses.A_BOLD)
 
     stdscr.refresh()
 
@@ -68,6 +68,7 @@ def phonebook_interface(stdscr):
                 # Delete contact logic will go here 
                 pass
         elif key == ord('h'):
+            print("Will update help logic here...")
             # Help logic will go here (triggered by 'h' key)
             pass
         elif key == ord('q'):
@@ -76,4 +77,5 @@ def phonebook_interface(stdscr):
             break
 
     # Clean up
-    curses.endwin()
+if __name__ == "__main__":
+    curses.wrapper(phonebook_interface)
