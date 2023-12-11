@@ -7,7 +7,8 @@ def print_phonebook_menu(stdscr, selected_option):
     # Print the phone book menu with the selected option highlighted
     menu = [
         "Add Contact",
-        "Save Contacts",
+        "Display Contant",
+        "Search Contact",
         "Edit Contact",
         "Delete Contact",
         "Exit"
@@ -49,7 +50,7 @@ def phonebook_interface(stdscr):
         key = stdscr.getch()
 
         # Process user input
-        if key == curses.KEY_DOWN and selected_option < 5:
+        if key == curses.KEY_DOWN and selected_option < 6:
             selected_option += 1
         elif key == curses.KEY_UP and selected_option > 1:
             selected_option -= 1
@@ -59,15 +60,18 @@ def phonebook_interface(stdscr):
                 # Add contact logic 
                 pass
             elif selected_option == 2:
-                # Save contacts logic
+                # Display contacts logic
                 pass
             elif selected_option == 3:
-                # Edit contact logic will be placed here 
+                # Search contact logic will be placed here 
                 pass
             elif selected_option == 4:
-                # Delete contact logic will go here 
+                # Edit contact
                 pass
             elif selected_option == 5:
+                # Delete contact logic will go here 
+                pass
+            elif selected_option == 6:
                 # Go back
                 quit_loading(stdscr)
                 break
