@@ -11,8 +11,6 @@ def print_phonebook_menu(stdscr, selected_option):
         "Search Contact",
         "Edit Contact",
         "Delete Contact",
-        "Help",
-        "Exit"
     ]
 
     for idx, item in enumerate(menu, start=1):
@@ -21,6 +19,12 @@ def print_phonebook_menu(stdscr, selected_option):
         else:
             stdscr.addstr(idx, 2, item)
 
+    # Print "Help" at the left bottom
+    stdscr.addstr(curses.LINES - 1, 2, "HELP", curses.A_BOLD)
+
+    # Print "Exit" at the right bottom
+    stdscr.addstr(curses.LINES - 1, curses.COLS - 10, "EXIT", curses.A_BOLD)
+
     stdscr.refresh()
 
 def phonebook_interface(stdscr):
@@ -28,17 +32,8 @@ def phonebook_interface(stdscr):
     curses.curs_set(0)
     stdscr.clear()
 
-    # Get screen size
-    height, width = stdscr.getmaxyx()
-
-    # Define the window size
-    window = stdscr.subwin(height - 1, width - 1, 0, 0)
-
     # Enable keypad input
     stdscr.keypad(1)
-
-    # Refresh the screen
-    stdscr.refresh()
 
     # Initialize selected option
     selected_option = 1
@@ -51,7 +46,7 @@ def phonebook_interface(stdscr):
         key = stdscr.getch()
 
         # Process user input
-        if key == curses.KEY_DOWN and selected_option < 7:
+        if key == curses.KEY_DOWN and selected_option < 5:
             selected_option += 1
         elif key == curses.KEY_UP and selected_option > 1:
             selected_option -= 1
@@ -72,15 +67,13 @@ def phonebook_interface(stdscr):
             elif selected_option == 5:
                 # Delete contact logic will go here 
                 pass
-            elif selected_option == 6:
-                # Help logic will go here
+            elif key == ord('h'):
+                # Help logic will go here (triggered by pressing 'h')
                 pass
-            elif selected_option == 7:
-                # Go back
+            elif key == ord('q'):
+                # Quit logic will go here (triggered by pressing 'q')
                 quit_loading(stdscr)
                 break
 
-
     # Clean up
     curses.endwin()
-
