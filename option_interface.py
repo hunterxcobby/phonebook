@@ -73,7 +73,7 @@ def phonebook_interface(stdscr):
             pass
         elif key == ord('q'):
             # Quit logic will go here (triggered by 'q' key)
-            quit_loading(stdscr)
+            # quit_loading(stdscr)
             break
 
     # Clean up
