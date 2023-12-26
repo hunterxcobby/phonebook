@@ -61,7 +61,7 @@ def phonebook_interface(stdscr):
                 print("Will implement display contact")
             elif selected_option == 3:
                 # Search contact logic will be placed here 
-                print("Will implement ")
+                print("Will implement searc contact")
             elif selected_option == 4:
                 # Edit contact
                 print("Will implement Edit contact")
