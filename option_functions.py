@@ -7,7 +7,7 @@ def display_help(stdscr):
 
     # Print help content
     help_content = [
-        "Phonebook Application Help",
+        "█▓▒▒░░░ - PHONEBOOK APPLICATION HELP - ░░░▒▒▓█",
         "---------------------------",
         "1. Add Contact: Allows you to add a new contact to the phonebook.\n",
         "2. Display Contact: Shows the list of all contacts in the phonebook.\n",
