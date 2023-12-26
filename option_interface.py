@@ -2,6 +2,7 @@
 
 import curses
 from utility import quit_loading
+from option_functions import display_help
 
 def print_phonebook_menu(stdscr, selected_option):
     # Print the phone book menu with the selected option highlighted
@@ -68,7 +69,7 @@ def phonebook_interface(stdscr):
                 # Delete contact logic will go here 
                 pass
         elif key == ord('h'):
-            print("Will update help logic here...")
+            display_help(stdscr)
             # Help logic will go here (triggered by 'h' key)
             pass
         elif key == ord('q'):
