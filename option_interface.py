@@ -54,17 +54,17 @@ def phonebook_interface(stdscr):
         elif key == curses.KEY_ENTER or key == 10:
             # Perform action based on the selected option
             if selected_option == 1:
-                # Add contact logic 
-                pass
+                # Add contact logic
+                print("Will implement add contact")
             elif selected_option == 2:
                 # Display contacts logic
-                pass
+                print("Will implement display contact")
             elif selected_option == 3:
                 # Search contact logic will be placed here 
-                pass
+                print("Will implement ")
             elif selected_option == 4:
                 # Edit contact
-                pass
+                print("Will implement Edit contact")
             elif selected_option == 5:
                 # Delete contact logic will go here 
                 pass
